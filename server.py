@@ -16,7 +16,7 @@ last_update = None
 
 async def get_demon_list(after: int=0, limit: int=100):
     async with ClientSession() as session:
-        async with session.get(f'https://pointercrate.com/api/v1/demons/?limit={limit}&after={after}') as resp:
+        async with session.get(f'http://gdshittylist.xyz/api/v1/demons/?limit={limit}&after={after}') as resp:
             if resp.status != 200: return
             data = await resp.json()
             return list(map(lambda demon: {
